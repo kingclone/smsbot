@@ -4,7 +4,7 @@ import threading
 import time
 
 # Установка токена вашего Telegram бота
-token = "6583819610:AAHeII9AEErcgwnEgVvIhvG30p3KibJAwQY"
+token = "7106642461:AAGsQLa7-saDi7q6yF_W2MbKR9rs7VmE1pg"
 bot = telebot.TeleBot(token)
 
 # URL для отправки SMS через kinopro.uz
