@@ -69,7 +69,7 @@ def send_sms_request(data):
 # Обработчик команды /start
 @bot.message_handler(commands=["start"])
 def start_message(message):
-    bot.send_message(message.chat.id, "👋🏻Assalomu aleykum! Botdan foydalanish tartibi: nomer va sms soni (minimum 1, maksimum 50 ta sms) masalan: 901234567 10\n\nBatafsil: <a href='t.me/+cCjXOEmdHv03Nzhh'>t.me/+cCjXOEmdHv03Nzhh</a>"'✅', parse_mode='HTML', disable_web_page_preview=True)
+    bot.send_message(message.chat.id, "👋🏻Assalomu aleykum! Botdan foydalanish tartibi: nomer va sms soni (minimum 1, maksimum 20 ta sms) masalan: 901234567 10\n\nBatafsil: <a href='t.me/+cCjXOEmdHv03Nzhh'>t.me/+cCjXOEmdHv03Nzhh</a>"'✅', parse_mode='HTML', disable_web_page_preview=True)
 
 # Обработчик сообщений
 @bot.message_handler(func=lambda message: True)
