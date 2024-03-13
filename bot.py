@@ -86,7 +86,7 @@ def handle_message(message):
         if len(data) == 2 and data[0].isdigit() and len(data[0]) <= 9 and data[1].isdigit():
             phone_number = data[0]
             sms_count = int(data[1])
-            if 1 <= sms_count <= 50:
+            if 1 <= sms_count <= 20:
                 # Проверяем, не идет ли уже отправка SMS для данного чата
                 if sending_sms.get(message.chat.id) == True:
                     bot.send_message(message.chat.id, "❌SMS yuborishi allaqachon boshlangan.")
@@ -94,9 +94,9 @@ def handle_message(message):
                     # Запускаем поток для отправки SMS
                     threading.Thread(target=send_sms, args=(phone_number, sms_count, message.chat.id)).start()
             else:
-                bot.send_message(message.chat.id, "⚠️Noto'g'ri format. Botdan foydalanish tartibi: nomer va sms soni (minimum 1, maksimum 50 ta sms) masalan: 901234567 10")
+                bot.send_message(message.chat.id, "⚠️Noto'g'ri format. Botdan foydalanish tartibi: nomer va sms soni (minimum 1, maksimum 20 ta sms) masalan: 901234567 10")
         else:
-            bot.send_message(message.chat.id, "⚠️Noto'g'ri format. Botdan foydalanish tartibi: nomer va sms soni (minimum 1, maksimum 50 ta sms) masalan: 901234567 10")
+            bot.send_message(message.chat.id, "⚠️Noto'g'ri format. Botdan foydalanish tartibi: nomer va sms soni (minimum 1, maksimum 20 ta sms) masalan: 901234567 10")
 
 # Запуск бота
 bot.polling()
