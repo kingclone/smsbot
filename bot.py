@@ -49,7 +49,7 @@ def send_sms(phone_number, sms_count, chat_id):
 
         if send_sms_request(data):
             total_sent_sms += 1
-            bot.edit_message_text(f"♻️SMS yuborilmoqda... {total_sent_sms}\nSMS ni to'xtatish uchun /stop burig'ini bering.", chat_id=chat_id, message_id=sms_status_message.message_id)
+            bot.edit_message_text(f"♻️SMS yuborilmoqda... {total_sent_sms}\nSMS ni to'xtatish uchun /stop buyrug'ini bering.", chat_id=chat_id, message_id=sms_status_message.message_id)
             time.sleep(1)
         else:
             bot.send_message(chat_id, "❌Xatolik: SMS yuborilmadi.")
@@ -86,7 +86,7 @@ def handle_message(message):
             if 1 <= sms_count <= 50:
                 # Проверяем, не идет ли уже отправка SMS для данного чата
                 if sending_sms.get(message.chat.id) == True:
-                    bot.send_message(message.chat.id, "❌SMS yuborishi allaqachon boshlangan.")
+                    bot.send_message(message.chat.id, "❌SMS yuborish allaqachon boshlangan, Iltimos kuting yoki /stop buyrig'i orqali to'xtating")
                 else:
                     # Запускаем поток для отправки SMS
                     threading.Thread(target=send_sms, args=(phone_number, sms_count, message.chat.id)).start()
